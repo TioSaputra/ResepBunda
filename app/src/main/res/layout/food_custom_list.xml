@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="#dadada">
+
+    <ImageView
+        android:id="@+id/food_image"
+        android:layout_width="match_parent"
+        android:layout_height="200px"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/avatar"/>
+
+    <TextView
+        android:id="@+id/food_name"
+        android:layout_below="@id/food_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20dp"
+        android:paddingLeft="20dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/hidden_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
+</RelativeLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "886300877260",
+    "firebase_url": "https://resepbunda-9eed6.firebaseio.com",
+    "project_id": "resepbunda-9eed6",
+    "storage_bucket": "resepbunda-9eed6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886300877260:android:f2807e0b3c423a6c",
+        "android_client_info": {
+          "package_name": "masakan.resep.google.com.resepbunda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "886300877260-76345jon1p100qmmgti2pl6n22em2sli.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "masakan.resep.google.com.resepbunda",
+            "certificate_hash": "f41ea01422752b1a89b44b4a76dab36866f8a74d"
+          }
+        },
+        {
+          "client_id": "886300877260-7eip28cv487fl80blr358e47qf35mhe5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCepVcsrCA3QryiDlFpfVW6X5piitFZrvA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "886300877260-7eip28cv487fl80blr358e47qf35mhe5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
