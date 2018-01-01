@@ -4,9 +4,6 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -22,8 +19,8 @@ import masakan.resep.google.com.resepbunda.temporary.Fragment2Test;
 public class MenuDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    Fragment1Test frag;
-    Fragment2Test frag2;
+    FoodListFragment foodListFrag;
+    UserHomeActivity userHomeFrag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,13 +78,13 @@ public class MenuDrawerActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_utama) {
-            frag = new Fragment1Test();
-            loadFragment(frag);
-        } else if (id == R.id.nav_gallery) {
-            frag2 = new Fragment2Test();
-            loadFragment(frag2);
-        } else if (id == R.id.nav_slideshow) {
+        if (id == R.id.nav_home) {
+            foodListFrag = new FoodListFragment();
+            loadFragment(foodListFrag);
+        } else if (id == R.id.nav_profile) {
+            userHomeFrag = new UserHomeActivity();
+            loadFragment(userHomeFrag);
+        } else if (id == R.id.nav_shoping) {
 
         } else if (id == R.id.nav_manage) {
 

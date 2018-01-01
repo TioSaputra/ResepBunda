@@ -1,8 +1,12 @@
 package masakan.resep.google.com.resepbunda;
 
+import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -20,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class FoodListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class FoodListFragment extends Fragment implements AdapterView.OnItemClickListener {
     Intent i;
     String foodId;
     String foodName;
@@ -33,11 +37,16 @@ public class FoodListActivity extends AppCompatActivity implements AdapterView.O
 
     DatabaseReference myRef;
     FirebaseDatabase database;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_list);
 
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.activity_food_list, container, false);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         // Write a message to the database
         database = FirebaseDatabase.getInstance();
@@ -59,7 +68,7 @@ public class FoodListActivity extends AppCompatActivity implements AdapterView.O
         });
     }
     private void fillFoodList(){
-        listview = (ListView) findViewById(R.id.Listview);
+        listview = (ListView) getView().findViewById(R.id.Listview);
         Customadapter customadapter = new Customadapter();
         listview.setAdapter(customadapter);
         listview.setOnItemClickListener(this);
@@ -81,7 +90,7 @@ public class FoodListActivity extends AppCompatActivity implements AdapterView.O
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        i = new Intent(FoodListActivity.this, FoodDetailActivity.class);
+        i = new Intent(getActivity(), FoodDetailActivity.class);
         foodId = ((TextView) view.findViewById(R.id.hidden_id)).getText().toString();
         foodName = ((TextView) view.findViewById(R.id.hidden_id)).getText().toString();
         i.putExtra("id", foodId);
@@ -109,7 +118,8 @@ public class FoodListActivity extends AppCompatActivity implements AdapterView.O
 
         @Override
         public View getView(int i, View view, ViewGroup parent) {
-            view = getLayoutInflater().inflate(R.layout.food_custom_list, null);
+            LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService( Context.LAYOUT_INFLATER_SERVICE );
+            view = inflater.inflate(R.layout.food_custom_list, null);
             ImageView imageView = (ImageView) view.findViewById(R.id.food_image);
             TextView names = (TextView) view.findViewById(R.id.food_name);
             TextView hidden = (TextView) view.findViewById(R.id.hidden_id);
