@@ -11,12 +11,13 @@
         android:theme="@style/AppTheme">
         <activity android:name=".FoodListActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"></action>
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FoodDetailActivity"></activity>
+        <activity android:name=".FoodDetailActivity" />
+        <activity android:name=".UserHomeActivity"></activity>
     </application>
 
 </manifest>
